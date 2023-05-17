@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import ServicesCard from './ServicesCard';
-const Services = () => {
-    const [services, setServices] = useState([]);
+import ProductsCart from '../../pages/Product/ProductsCars'
+const Products = () => {
+    const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('products.json')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => setProducts(data))
     }, []);
     return (
         <div>
@@ -16,10 +16,16 @@ const Services = () => {
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
-                    services.map(service =><ServicesCard
-                    key={service._id}
-                    service={service}
-                    ></ServicesCard>)
+
+                    products.map(product=><ProductsCart
+                        key={product._id}
+                        product={product}
+                    >
+                    </ProductsCart>)
+                    // products.map(product =><Produc
+                    // key={service._id}
+                    // service={service}
+                    // ></ServicesCard>)
                 }
             </div>
         </div>
@@ -27,4 +33,4 @@ const Services = () => {
 
 }
 
-export default Services
+export default Products
