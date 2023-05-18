@@ -1,5 +1,5 @@
 import React from 'react'
-// import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
 const ServicesCard = ({service}) => {
@@ -12,8 +12,8 @@ const ServicesCard = ({service}) => {
                     <h2 className="card-title">{title}</h2>
                     <p className='text-2xl text-orange-600 font-semibold'>Price $:{price}</p>
                     <div className="card-actions justify-end">
-                    <Link to={`/checkout/${_id}`}>
-                        <button className="btn btn-primary">Checkout</button>
+                    <Link to={`/checkout/${_id}`} className='text-3xl text-blue-600'>
+                        <BsFillArrowRightCircleFill></BsFillArrowRightCircleFill>
                     </Link>
                     </div>
                 </div>
