@@ -12,7 +12,7 @@ const PriviteRoute = ({children}) => {
         return children;
     }
     return (
-        <Navigate state={{from: location}}></Navigate>
+        <Navigate to={'/login'} state={{from: location}}></Navigate>
     );
 };
 

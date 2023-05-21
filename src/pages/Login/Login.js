@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import img1 from "../../assets/images/login/login2.png";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
     const { login } = useContext(AuthContext);
     const location = useLocation();
+    const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
 

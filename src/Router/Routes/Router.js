@@ -5,6 +5,7 @@ import Login from "../../pages/Login/Login";
 import SignUp from "../../pages/SignUp/SignUp";
 import CheckOut from "../../pages/CheckOut/CheckOut";
 import Orders from "../../pages/Orders/Orders";
+import PriviteRoute from "../PriviteRoute/PriviteRoute";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/checkout/:id",
-            element:<CheckOut/>,
+            element:<PriviteRoute><CheckOut/></PriviteRoute>,
             loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
